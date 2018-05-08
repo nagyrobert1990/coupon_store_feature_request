@@ -9,11 +9,13 @@ import java.util.List;
 
 public interface CouponService {
 
-    List<Coupon> getCoupons() throws SQLException;
+    List<Coupon> getCoupons(int user_id) throws SQLException;
 
     Coupon getCoupon(String id) throws SQLException, ServiceException;
 
-    Coupon addCoupon(String name, String percentage) throws SQLException, ServiceException;
+    List<Coupon> getCoupons(int user_id, int shopId) throws SQLException;
+
+    Coupon addCoupon(String name, String percentage, int userId) throws SQLException, ServiceException;
 
     void addCouponToShops(String couponId, String... shopIds) throws SQLException, ServiceException;
 

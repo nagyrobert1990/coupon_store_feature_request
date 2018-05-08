@@ -66,7 +66,7 @@ public final class CouponServlet extends AbstractServlet {
             couponService.addCouponToShops(couponId, shopIds);
 
             String info = String.format("Coupon with id %s has been added to shops with ids: %s",
-                couponId, Arrays.stream(shopIds).collect(Collectors.joining(", ")));
+                    couponId, Arrays.stream(shopIds).collect(Collectors.joining(", ")));
             req.setAttribute("info", info);
         } catch (SQLException ex) {
             if (SQL_ERROR_CODE_UNIQUE_VIOLATION.equals(ex.getSQLState())) {

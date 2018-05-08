@@ -9,7 +9,11 @@
 <h1>Profile</h1>
 <p>Email: <c:out value="${user.email}"/></p>
 <p>Password: <c:out value="${user.password}"/></p>
-<h2>Links</h2>
+<h2>Your Coupons</h2>
+    <c:forEach var="coupon" items="${coupons}">
+        <p>${coupon.name}</p>
+    </c:forEach>
+<h3>Links</h3>
 <ul>
     <li><a href="shops">Shops</a></li>
     <li><a href="coupons">Coupons</a></li>

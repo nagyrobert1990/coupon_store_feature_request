@@ -6,11 +6,13 @@ public final class Coupon extends AbstractModel {
 
     private final String name;
     private final int percentage;
+    private final int userId;
 
-    public Coupon(int id, String name, int percentage) {
+    public Coupon(int id, String name, int percentage, int userId) {
         super(id);
         this.name = name;
         this.percentage = percentage;
+        this.userId = userId;
     }
 
     public String getName() {
@@ -21,6 +23,9 @@ public final class Coupon extends AbstractModel {
         return percentage;
     }
 
+    public int getUserId() {
+        return userId;
+    }
 
     @Override
     public boolean equals(Object o) {
